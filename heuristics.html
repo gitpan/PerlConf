@@ -1,0 +1,39 @@
+<html><!-- -*- Mode: Html-helper; coding: unicode-utf8; -*- -->
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+</head>
+<body BGCOLOR=#ffffff>
+<FONT SIZE="7">
+<HR>
+<A HREF="k15.html"><IMG SRC="uparrow.gif" ALIGN=RIGHT BORDER=0></A>
+<H1>Heuristics to ensure UTF-8</H1>
+<PRE><B>
+sub to_utf8 {
+  my($s) = shift;
+  if ($s =~ /[\200-\377]/) {
+    my $warn;
+    local $^W=1;
+    local($SIG{__WARN__}) = sub { $warn = shift; };
+    require Unicode::String;
+    my $us = Unicode::String::utf8($s); # trigger warning
+    if ($warn and $warn =~ /utf8/i) {
+      $s = Unicode::String::latin1($s)->utf8;
+      ######################################
+    }
+  }
+  decode_highbit_entities($s);
+  $s;
+}
+</B></PRE>
+</FONT>
+<HR>
+<ADDRESS>
+Internationalization<BR>
+O'Reilly Apache Conference,
+24 August 1999<br>
+Andreas König (on CPAN: <B>ANDK</B>)<BR>
+<A HREF="mailto:andreas.koenig@anima.de">&lt;andreas.koenig@anima.de&gt;</A><BR>
+</ADDRESS>
+</body>
+</html>

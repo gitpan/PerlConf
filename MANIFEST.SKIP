@@ -1,0 +1,10 @@
+~$
+RCS/
+CGI.pm
+.bak$
+collect-rfcs
+extract-rfc-title
+gen-tpl
+template
+\.gz$
+

@@ -1,0 +1,40 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>15</title>
+</head>
+<body BGCOLOR=#ffffff>
+<FONT SIZE="7">
+<HR>
+<A HREF="k16.html"><IMG SRC="rightarrow.gif" ALIGN=RIGHT BORDER=0></A>
+<A HREF="k14.html"><IMG SRC="leftarrow.gif" ALIGN=RIGHT BORDER=0></A>
+<H1>Forms</H1>
+<UL>
+  <li> Use hint ACCEPT-CHARSET="utf-8" on both the FORM element and the FORM controls.
+  <LI> &lt;FORM METHOD=GET ... &gt; and<BR>
+      &lt;FORM METHOD=POST ENCTYPE=application/x-www-form-urlencoded ... &gt;
+      <ul>
+	<li> Lacking a specification of a character
+	    encoding scheme, the "%HH" notation has no well-defined meaning.
+	<li> Browsers send back in the encoding they received. Don't rely on that.
+      </ul>
+  <li> &lt;FORM METHOD=POST ENCTYPE=multipart/form-data ... &gt;
+      <ul>
+	<li> Every form element is a separate body of a multipart MIME body.
+	<li> Not all your user-agents support multipart POST.
+	<li> <a href="patch.CGI.multipart.990824.txt">Patch</a> CGI.pm and if it works out well, Doug will hopefully fix Apache::Request too.
+	<li> Don't rely on the headers you get.
+      </ul>
+  <li> Use <a href="heuristics.html">heuristics</a>.
+</UL>
+</FONT>
+<HR>
+<ADDRESS>
+Internationalization<BR>
+O'Reilly Apache Conference,
+24 August 1999<br>
+Andreas König (on CPAN: <B>ANDK</B>)<BR>
+<A HREF="mailto:andreas.koenig@anima.de">&lt;andreas.koenig@anima.de&gt;</A><BR>
+</ADDRESS>
+</body>
+</html>

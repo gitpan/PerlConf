@@ -1,0 +1,47 @@
+# Simple minded enhancement of HTML::Entities.
+# Provide entity conversion for wide characters.
+# Should add defined HTML 4.0 entities as well.
+# Should take advantage of caller.pm
+
+use HTML::Entities;
+use Unicode::String;
+use strict;
+use vars qw($VERSION);
+
+my %entity2utf8 = %HTML::Entities::entity2char;
+while (my($k,$v) = each %entity2utf8){
+  if ($v =~ /[\200-\377]/) {
+    $entity2utf8{$k} = Unicode::String::latin1($v)->utf8;
+  } else {
+    delete $entity2utf8{$k}; # do not convert amp, lt, gt, and quot
+  }
+}
+
+$VERSION = sprintf "%d.%03d", q$Revision: 1.1 $ =~ /(\d+)\.(\d+)/;
+
+sub decode_highbit_entities {
+  my $array;
+  if (defined wantarray) {
+    $array = [@_]; # copy
+  } else {
+    $array = \@_;  # modify in-place
+  }
+  my $c;
+  use utf8;
+  for (@$array) {
+    s{ ( & \# (\d+) ;? )
+    }{ ($2 > 127) ? chr($2) : $1
+    }xeg;
+
+    s{ ( & \# [xX] ([0-9a-fA-F]+) ;? )
+    }{$c = hex($2); $2 > 127 ? chr($c) : $1
+    }xeg;
+
+    s{ ( & (\w+) ;? )
+    }{$entity2utf8{$2} || $1
+    }xeg;
+
+  }
+  wantarray ? @$array : $array->[0];
+}
+

@@ -1,0 +1,69 @@
+--- CGI.pm.bak	Tue Aug 24 17:15:50 1999
++++ CGI.pm	Tue Aug 24 17:19:23 1999
+@@ -18,7 +18,7 @@
+ #   http://stein.cshl.org/WWW/software/CGI/
+ 
+ $CGI::revision = '$Id: CGI.pm,v 1.18 1999/06/09 14:52:45 lstein Exp $';
+-$CGI::VERSION='2.54';
++$CGI::VERSION='2.5401';
+ 
+ # HARD-CODED LOCATION FOR FILE UPLOAD TEMPORARY FILES.
+ # UNCOMMENT THIS ONLY IF YOU KNOW WHAT YOU'RE DOING.
+@@ -2832,14 +2832,23 @@
+ # caller can read from it if necessary.
+ #####
+ 'read_multipart' => <<'END_OF_FUNC',
+-sub read_multipart {
++package CGI::MultipartVariables;
++use overload "\"\"", "as_string", fallback => 1;
++
++sub new { bless {}, shift; }
++sub set_value { my($self,$val) = @_; $self->{VALUE} = $val; }
++sub set_header { my($self,$val) = @_; $self->{HEADER} = $val; }
++sub as_string { shift->{VALUE}; }
++sub multipart_header { shift->{HEADER}; }
++
++package CGI;
++sub CGI::read_multipart {
+     my($self,$boundary,$length,$filehandle) = @_;
+     my($buffer) = $self->new_MultipartBuffer($boundary,$length,$filehandle);
+     return unless $buffer;
+-    my(%header,$body);
+     my $filenumber = 0;
+     while (!$buffer->eof) {
+-	%header = $buffer->readHeader;
++        my %header = $buffer->readHeader;
+ 
+ 	unless (%header) {
+ 	    $self->cgi_error("400 Bad request (malformed multipart POST)");
+@@ -2858,7 +2867,10 @@
+ 	# to our parameter list.
+ 	unless ($filename) {
+ 	    my($value) = $buffer->readBody;
+-	    push(@{$self->{$param}},$value);
++	    my $var = CGI::MultipartVariables->new;
++	    $var->set_value($value);
++	    $var->set_header(\%header);
++	    push(@{$self->{$param}},$var);
+ 	    next;
+ 	}
+ 
+@@ -2869,7 +2881,8 @@
+ 	  # the file for reading.
+ 
+ 	  # skip the file if uploads disabled
+-	  if ($DISABLE_UPLOADS) {
++	  if ($CGI::DISABLE_UPLOADS) {
++	      my $data;
+ 	      while (defined($data = $buffer->read)) { }
+ 	      last UPLOADS;
+ 	  }
+@@ -2879,7 +2892,7 @@
+           for (my $cnt=10;$cnt>0;$cnt--) {
+ 	    next unless $tmpfile = new TempFile($seqno);
+ 	    $tmp = $tmpfile->as_string;
+-	    last if $filehandle = Fh->new($filename,$tmp,$PRIVATE_TEMPFILES);
++	    last if $filehandle = Fh->new($filename,$tmp,$CGI::PRIVATE_TEMPFILES);
+             $seqno += int rand(100);
+           }
+           die "CGI open of tmpfile: $!\n" unless $filehandle;

@@ -1,0 +1,19 @@
+<html><!-- -*- Mode: Html-helper; coding: unicode-utf8; -*- -->
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+</head>
+<body BGCOLOR=#ffffff>
+<H1>Testing UTF-8 and right-to-left</H1>
+Hello in Hebrew left-to-right (wrong): שלום<br>
+Hello in Hebrew right-to-left (correct): םולש<br>
+Street in Hebrew right-to-left (correct): בוחר<br>
+City in Hebrew right-to-left (correct): ריע<br>
+Zipcode in Hebrew right-to-left (correct): דוקימ<br>
+King in German left-to-right (correct): König<br>
+Zero to nine with left-to-right marker: ‪0123456789‬<br>
+Zero to nine with right-to-left marker: ‫0123456789‬<br>
+Zero to nine with left-to-right DIR attribute: <SPAN DIR=LTR>0123456789</SPAN><br>
+Zero to nine with right-to-left DIR attribute: <SPAN DIR=RTL>0123456789</SPAN><br>
+</body>
+</html>

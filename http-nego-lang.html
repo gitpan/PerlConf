@@ -1,0 +1,41 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+</head>
+<body BGCOLOR=#ffffff>
+<FONT SIZE="7">
+<HR>
+<A HREF="k09.html"><IMG SRC="uparrow.gif" ALIGN=RIGHT BORDER=0></A>
+<H1>Netscape's wrong Accept-Language</H1>
+<PRE><B>
+my $al = $r->header_in("Accept-Language");
+if ($al =~ /,/ && $al !~ /;/) {
+  my @l = grep length($_)>0, split m{\s*,\s*}, $al;
+  $al = join ",", map {
+                       sprintf "%s;q=%4.2f",
+                       $l[$_], 1-$_/scalar(@l)
+                      } 0..$#l;
+}
+my $hhh = HTTP::Headers->new("Accept-Language", $al);
+my $variants = [
+['ja', 1, undef, undef, undef, 'ja', undef],
+['de', 1, undef, undef, undef, 'de', undef],
+];
+
+@langprefs = map { $_->[0] }
+             grep {$_->[1] > 0}
+             HTTP::Negotiate::choose($variants, $hhh);
+
+</B></PRE>
+</FONT>
+<HR>
+<ADDRESS>
+Internationalization<BR>
+O'Reilly Apache Conference,
+24 August 1999<br>
+Andreas König (on CPAN: <B>ANDK</B>)<BR>
+<A HREF="mailto:andreas.koenig@anima.de">&lt;andreas.koenig@anima.de&gt;</A><BR>
+</ADDRESS>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>6</title>
+</head>
+<body BGCOLOR=#ffffff>
+<FONT SIZE="7">
+<HR>
+<A HREF="k07.html"><IMG SRC="rightarrow.gif" ALIGN=RIGHT BORDER=0></A>
+<A HREF="k05.html"><IMG SRC="leftarrow.gif" ALIGN=RIGHT BORDER=0></A>
+<H1>Example code PNG</H1>
+<PRE><B>
+my $r = shift;
+...
+my $im_ext = accepts_png($r) ? "png" : "jpg";
+print qq{&lt;IMG SRC="arrow.$im_ext"&gt;};
+...
+$r->header_out('Vary', 'accept');
+...
+sub accepts_png { # naïve approach
+  my $r = shift;
+  $r->header_in("Accept") =~ m|image/png|i;
+}
+</B></PRE>
+</FONT>
+<HR>
+<ADDRESS>
+Internationalization<BR>
+O'Reilly Apache Conference,
+24 August 1999<br>
+Andreas König (on CPAN: <B>ANDK</B>)<BR>
+<A HREF="mailto:andreas.koenig@anima.de">&lt;andreas.koenig@anima.de&gt;</A><BR>
+</ADDRESS>
+</body>
+</html>

@@ -1,0 +1,355 @@
+[Font Map Unifont]
+Font Count=1
+Font1=10646:gnu-unifont-iso10646-1
+
+[Default]
+
+Path=${HOME}/.yudit:${YUDITDATA}:/usr/X11R6/lib/X11/fonts/TrueType
+Encoding=UTF8
+Input=Straight
+XInput=None
+
+
+Font=Unifont
+Size=16
+Slant=Any
+Spacing=Any
+Weight=Any
+
+Language=English
+Tab Size=8
+Foreground=black
+Background=white
+Cursor=red
+
+Printer=Default
+
+[Menu Item]
+
+Printer=Default,Blueberry,Preview,Untitled.ps
+
+Encoding=UTF8,UTF7,8859_1,8859_2,8859_5,8859_7,8859_9,KOI8_R,CP1251,JIS,EUC_JP,SJIS,EUC_KR,JOHAB,UHC,GB2312_7,GB2312_8,HZ,BIG5,CTEXT_JA,CTEXT_KR,VISCII,UNI,MSTXT,JAVA
+Input=Straight,Unicode,Chinese-CJ,Greek,Russian,Hungarian,Lithuanian,Kana,Danish,Dutch,German,Mnemonic,Polish,SGML,Cyrillic,Hangul,Hangul2,Hangul3,Vietnamese,Ethiopic,Hebrew,Arabic,French,Czech
+XInput=None,Kinput2
+
+Font=Unifont,English,Unicode,Times,Arial,Courier,Russian,European,Japanese,Kinput,Chinese-big5,Chinese-GL,Chinese-GR,Korean-Unicode,Wansung
+
+Language=English,Hungarian,Japanese,German,Chinese,Russian,Italian,Custom
+Weight=Any,Regular,Medium,Demibold,Bold
+Size=10,12,13,14,15,16,18,24
+Slant=Any,Roman,Italic,Oblique
+Spacing=Any,Monospace,Condensed,Proportional
+
+Tab Size=2,4,8
+!--------------------------------------------------------------------------
+!These color names can be used only in QT
+!      darkGray, darkRed, darkBlue, darkCyan, darkMagenta, darkYellow
+!--------------------------------------------------------------------------
+! 
+Background=black,white,darkGray,gray,lightGray,red,green,blue,cyan,magenta,yellow,darkRed,darkGreen,darkBlue,darkCyan,darkMagenta,darkYellow
+Foreground=black,white,darkGray,gray,lightGray,red,green,blue,cyan,magenta,yellow,darkRed,darkGreen,darkBlue,darkCyan,darkMagenta,darkYellow
+Cursor=black,white,darkGray,gray,lightGray,red,green,blue,cyan,magenta,yellow,darkRed,darkGreen,darkBlue,darkCyan,darkMagenta,darkYellow
+
+[Font Map English]
+
+Font Count=1
+!
+! New style.
+! Fontn=UMap:Foundry-Family-Registry-Encoding
+!
+Font1=8859_1:*-*-iso8859-1
+
+[Font Map European]
+
+Font Count=4
+Font1=8859_1:*-*-iso8859-1
+Font2=8859_2:*-*-iso8859-2
+Font3=8859_5:*-*-iso8859-5
+Font4=8859_7:*-*-iso8859-7
+
+[Font Map Russian]
+
+Font Count=3
+Font1=8859_1:*-*-iso8859-1
+Font2=8859_2:*-*-iso8859-2
+Font3=KOI8_R:*-*-koi8-r
+
+! The Ethiopic part can be found in
+! ftp://ftp.cs.indiana.edu/pub/fidel/fonts/
+!     as ethiomx16f-uni.bdf
+! The unicode part can be found in 
+! ftp://ftp.x.org/contrib
+!    as etl-unicode.tar.gz
+[Font Map Unicode]
+
+Font Count=2
+Font1=10646:*-*-iso10646-1
+Font2=10646:*-*-ethiopic-unicode
+
+[Font Map Japanese]
+
+Font Count=8
+Font1=KSC5601L:*-*-ksc5601.1987-0
+Font2=JIS0208:*-*-jisx0208.1983-0
+Font3=JIS0201:*-*-jisx0201.1976-0
+Font4=JIS0212:*-*-jisx0212.1990-0
+Font5=8859_1:*-*-iso8859-1
+Font6=8859_7:*-*-iso8859-7
+Font7=KOI8_R:*-*-koi8-r
+Font8=8859_2:*-*-iso8859-2
+
+[Font Map Kinput]
+Font Count=3
+Font1=JIS0208:*-*-jisx0208.1983-0
+Font2=JIS0201:*-*-jisx0201.1976-0
+Font3=8859_1:*-*-iso8859-1
+
+! ftp://ftp.ifcss.org/pub/software/fonts/big5/bdf/*
+
+[Font Map Chinese-big5]
+
+Font Count=4
+Font1=8859_1:*-*-iso8859-1
+Font2=10646:misc-*-unicode-0
+Font3=BIG5:*-*-big5.hku-0
+Font4=BIG5:*-*-big5-0
+
+[Font Map Chinese-GL]
+
+Font Count=8
+Font1=KSC5601L:*-*-ksc5601.1987-0
+Font2=JIS0208:*-*-jisx0208.1983-0
+Font3=JIS0201:*-*-jisx0201.1976-0
+Font4=GB2312L:*-*-gb2312.1980-0
+Font5=8859_1:*-*-iso8859-1
+Font6=8859_7:*-*-iso8859-7
+Font7=KOI8_R:*-*-koi8-r
+Font8=8859_2:*-*-iso8859-2
+
+[Font Map Chinese-GR]
+
+Font Count=8
+Font1=KSC5601L:*-*-ksc5601.1987-0
+Font2=JIS0208:*-*-jisx0208.1983-0
+Font3=JIS0201:*-*-jisx0201.1976-0
+Font4=GB2312R:*-*-gb2312.1980-0
+Font5=8859_1:*-*-iso8859-1
+Font6=8859_7:*-*-iso8859-7
+Font7=KOI8_R:*-*-koi8-r
+Font8=8859_2:*-*-iso8859-2
+
+[Font Map Wansung]
+Font Count=2
+Font1=KSC5601L:*-*-ksc5601.1987-0
+Font2=8859_1:*-*-iso8859-1
+
+[Font Map Korean-Unicode]
+Font Count=4
+Font1=8859_1:*-*-iso8859-1
+Font2=JIS0208:*-*-jisx0208.1983-0
+Font3=GB2312L:*-*-gb2312.1980-0
+Font4=10646:htm-*-unicode-0
+
+! MingLiU for Chinese, Gulim for Hangul, MSGothic for Japanese
+! can be downloaded for Internet Explorer from www.microsoft.com
+! File name: ie3lpk??.exe
+! Another unicode chinese font "clibff51.ttf", which could be download from
+!   ftp://ftp.ni.net/cust/twinbridge/download/chinese/demo/c498demo.exe
+!   ftp://ftp.ni.net/cust/twinbridge/download/asianttf/clibff51.exe
+!
+! [Font TrueType MingLiU]
+! Medium Roman=mingliu
+
+
+!
+! Gulim can be downloaded for Internet Explorer from www.microsoft.com  
+!
+! [Font TrueType Gulim]
+! Medium Roman=gulim
+
+!
+! Gothic can be downloaded for Internet Explorer from www.microsoft.com  
+! for Japanese
+! [Font TrueType MSGothic]
+! Medium Roman=msgothic
+
+! This can be downloaded from
+
+! This can be downloaded from
+! ftp://ftp.cs.indiana.edu/pub/fidel/fonts/
+!
+! [Font TrueType Ethiopic]
+! Medium Roman=gfzemenu
+
+! CyberBit can be downloaded from www.bitstream.com
+! File name: cbchntrd.exe cbchnsmp.exe cbkanji.exe cbkorean.exe
+
+! [Font TrueType CyberBit]
+! Medium Roman=cyberbit
+
+[Font TrueType Times]
+
+Medium Roman=times
+Medium Italic=timesi
+Bold Roman=timesb
+Bold Italic=timesz
+
+[Font TrueType Arial]
+
+Medium Roman=arial
+Medium Italic=ariali
+Bold Roman=arialb
+Bold Italic=arialz
+
+[Font TrueType Courier]
+
+Medium Roman=cour
+Medium Italic=couri
+Bold Roman=courb
+Bold Italic=courz
+
+[Printer Default]
+Command=/usr/bin/lpr
+
+[Printer Blueberry]
+Command=/usr/bin/lpr -Pblueberry
+
+[Printer Preview]
+Command=cat > ${HOME}/.preview.ps ; gv ${HOME}/.preview.ps &
+
+[Printer Untitled.ps]
+File=${HOME}/Untitled.ps
+
+// Root is also ok.
+[XInput Kinput2]
+Version=0.0
+Input Style=Off The Spot
+Input Type=_JAPANESE_CONVERSION
+Font Map=Kinput
+Encoding=CTEXT_JA
+Text Type=COMPOUND_TEXT
+
+[XInput None]
+Version=0.0
+Input Type=None
+Input Style=None 
+Font Map=None
+Encoding=None
+Text Type=None
+
+[Language English]
+Short Name=en.utf8
+Text Font=English
+Text Size=16
+Text Weight=Medium
+Text Slant=Any
+Text Spacing=Any
+
+Button Font=English
+Button Size=16
+Button Weight=Bold
+Button Slant=Any
+Button Spacing=Any
+
+[Language Italian]
+Short Name=it.utf8
+Text Font=English
+Text Size=16
+Text Weight=Medium
+Text Slant=Any
+Text Spacing=Any
+
+Button Font=English
+Button Size=16
+Button Weight=Bold
+Button Slant=Any
+Button Spacing=Any
+
+[Language Chinese]
+Short Name=zh_TW.utf8
+Text Font=Chinese-big5
+Text Size=16
+Text Weight=Any
+Text Slant=Any
+Text Spacing=Any
+
+Button Font=Chinese-big5
+Button Size=16
+Button Weight=Any
+Button Slant=Any
+Button Spacing=Any
+
+[Language German]
+Short Name=de.utf8
+Text Font=English
+Text Size=16
+Text Weight=Any
+Text Slant=Any
+Text Spacing=Any
+
+Button Font=English
+Button Size=16
+Button Weight=Bold
+Button Slant=Any
+Button Spacing=Any
+
+[Language Hungarian]
+Short Name=hu.utf8
+Text Font=Russian
+Text Size=16
+Text Weight=Any
+Text Slant=Any
+Text Spacing=Any
+
+Button Font=Russian
+Button Size=18
+Button Weight=Bold
+Button Slant=Roman
+Button Spacing=Any
+
+[Language Japanese]
+Short Name=ja.utf8
+Text Font=Kinput
+Text Size=14
+Text Weight=Any
+Text Slant=Any
+Text Spacing=Any
+
+Button Font=Kinput
+Button Size=16
+Button Weight=Any
+Button Slant=Any
+Button Spacing=Any
+
+[Language Russian]
+Short Name=ru.utf8
+Text Font=Russian
+Text Size=13
+Text Weight=Any
+Text Slant=Any
+Text Spacing=Any
+
+Button Font=Russian
+Button Size=15
+Button Weight=Any
+Button Slant=Any
+Button Spacing=Any
+
+[Language Custom]
+Short Name=your.utf8
+Text Font=English
+Text Size=14
+Text Weight=Any
+Text Slant=Any
+Text Spacing=Any
+
+Button Font=English
+Button Size=16
+Button Weight=Any
+Button Slant=Any
+Button Spacing=Any
+
+[Font Map Unifont]
+Font Count=1
+Font1=10646:-gnu-unifont-medium-r-normal--16-160-75-75-c-80-iso10646-1
+
